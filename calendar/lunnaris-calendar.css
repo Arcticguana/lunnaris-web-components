@@ -1,0 +1,139 @@
+:root {
+    --comp-accent: rgb(109, 109, 255);
+    --comp-accent-2: rgb(85, 85, 159);
+    --comp-bg: white;
+    --comp-b1: rgb(202, 202, 202);
+    --comp-b2: rgb(222, 222, 222);
+    --comp-accent-text-color: white;
+    --comp-text-color: black;
+}
+
+.date-picker {
+    min-width: 300px;
+    width: 300px;
+    max-width: 500px;
+    display: none;
+    flex-direction: column;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.3);
+    background-color: var(--comp-bg);
+}
+
+.date-picker.showing {
+    display: flex;
+}
+
+.date-picker .selector-pane {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: var(--comp-accent);
+    border-radius: 10px 10px 0 0;
+    padding: 5px;
+    font-size: inherit;
+}
+
+.date-picker .selector-pane .month-pane {
+    display: flex;
+    flex-direction: row;
+    color: var(--comp-accent-text-color);
+    position: relative;
+    font-size: inherit;
+}
+
+.left-arrow-btn, .right-arrow-btn {
+    background-color: var(--comp-accent);
+    color: var(--comp-accent-text-color);
+    border: none;
+    font-size: inherit;
+    padding: 0 5px;
+    border-radius: 10px;
+}
+
+.left-arrow-btn:hover, .right-arrow-btn:hover {
+    background-color: var(--comp-accent-2);
+}
+
+.selected-item {
+    padding: 0 10px;
+    font-size: inherit;
+}
+
+.date-picker .selector-pane .month-pane .month-selector .month-list {
+    list-style: none;
+    position: absolute;
+    display: none;
+    color: var(--comp-text-color);
+    background-color: var(--comp-bg);
+    box-shadow: 2px 2px 10px 1px rgba(0, 0, 0, 0.3);
+    top:100%;
+    max-height: 100px;
+    width: fit-content;
+    float: left;
+    overflow: auto;
+    cursor: pointer;
+    justify-self: center;
+    font-size: inherit;
+}
+.date-picker .selector-pane .month-pane .month-selector:hover .month-list {
+    display: block;
+}
+
+.date-picker .selector-pane .month-pane .month-selector .month-list .month-item {
+    padding: 0 10px;
+    padding-left: 10px;
+    font-size: inherit;
+}
+
+.date-picker .selector-pane .month-pane .month-selector .month-list .month-item:hover {
+    background-color: var(--comp-b1);;
+}
+
+.date-picker .selector-pane .year-pane {
+    color: var(--comp-accent-text-color);
+}
+
+.date-picker .days-panel .names {
+    background-color: var(--comp-b1);
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    cursor: default;
+    font-size: inherit;
+}
+
+.date-picker .days-panel .names .day-name, 
+.date-picker .days-panel .names .day-name strong {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    font-size: inherit;
+}
+
+.date-picker .days-panel .month-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    padding: 5px;
+    font-size: inherit;
+}
+
+.date-picker .days-panel .month-days .day-cell {
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: inherit;
+
+}
+
+.date-picker .days-panel .month-days .day-cell:hover {
+    background-color: var(--comp-b2);
+}
+
+.date-picker .days-panel .month-days .day-cell.selected {
+    color: var(--comp-accent-text-color);
+    background-color: var(--comp-accent);
+}
